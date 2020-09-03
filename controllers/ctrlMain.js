@@ -20,6 +20,14 @@ module.exports = function (app) {
         let result = (await dboDataModel.createJobGroup('Nghia', req.body.jobGroupName));
         res.status(result.statusCode).json(result);
     });
+    app.put('/user/:jobGroupId', jsonParse, async function (req, res) {
+        let result = (await dboDataModel.updateJobGroupName('Nghia', req.params.jobGroupId, req.body.name));
+        res.status(result.statusCode).json(result);
+    });
+    app.delete('/user/:jobGroupId', jsonParse, async function (req, res) {
+        let result = (await dboDataModel.deleteJobGroup('Nghia', req.params.jobGroupId));
+        res.status(result.statusCode).json(result);
+    });
     app.post('/user/:jobGroupId', jsonParse, async function (req, res) {
         if (req.body.jobName === '') {
             res.status(404).json({ error: "JobName must be not empty !" });

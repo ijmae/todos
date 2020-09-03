@@ -25,6 +25,20 @@ module.exports = function (app) {
     });
     //
 
+    //Sửa tên nhóm công việc
+    app.put('/user/:jobGroupId', jsonParse, async function (req, res) {
+        let result = (await dboDataModel.updateJobGroupName('Nghia', req.params.jobGroupId, req.body.name));
+        res.status(result.statusCode).json(result);
+    });
+    //
+
+    //Xóa nhóm công việc
+    app.delete('/user/:jobGroupId', jsonParse, async function (req, res) {
+        let result = (await dboDataModel.deleteJobGroup('Nghia', req.params.jobGroupId));
+        res.status(result.statusCode).json(result);
+    });
+    //
+
     //Thêm Công Việc
     app.post('/user/:jobGroupId', jsonParse, async function (req, res) {
         if (req.body.jobName === '') {

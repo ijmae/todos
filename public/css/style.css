@@ -3,14 +3,33 @@
     padding: 0px;
 }
 
-/* .delete-text {
-    text-decoration: line-through;
-} */
+.groupJobGroupName {
+    position: relative;
+    height: 50px;
+}
+
+.btnDeleteJobGroup {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    background-color: transparent;
+    right: 0px;
+    border: 0px;
+    padding: 0px;
+    color: white;
+}
+
+.btnDeleteJobGroup:focus {
+    box-shadow: none!important;
+}
 
 .subject {
     border: 0;
     font-size: 2rem;
     width: 100%;
+    position: absolute;
 }
 
 .subject:focus {

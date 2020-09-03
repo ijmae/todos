@@ -1,6 +1,9 @@
 <div class="card border rounded bg-info">
-    <input type="text" maxlength="20" class="subject bg-transparent mt-2 font-weight-bold text-white text-center"
-        value="<%= jobGroupName %>">
+    <div class="groupJobGroupName">
+        <input type="text" maxlength="20" class="subject bg-transparent mt-2 font-weight-bold text-white text-center iptJobGroupName"
+            value="<%= jobGroupName %>" data-jobGroupId=<%= jobGroupId %>>
+        <button class="btnDeleteJobGroup btn" data-jobGroupId=<%= jobGroupId %>>X</button>
+    </div>
     <ul class="list-group m-3 bg-light">
         <!-- jobs -->
         <% jobs.forEach(function(job) { %>

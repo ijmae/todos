@@ -44,15 +44,34 @@ document.addEventListener('DOMContentLoaded', function () {
     //Hiện modal xác nhận xóa công việc
     (() => {
         const domBtnDeleteJob = Array.from(document.getElementsByClassName('btnDeleteJob'));
+        const contentModal = document.getElementsByClassName('delete-modal-body')[0];
+
         domBtnDeleteJob.forEach(dom => {
             dom.addEventListener('click', function () {
                 const jobGroupId = this.dataset.jobgroupid;
                 const jobId = this.dataset.jobid;
+                contentModal.innerHTML = `Xóa công việc "${this.parentElement.previousElementSibling.innerHTML}"`;
                 const domBtnAccept = document.querySelector('#btnAcceptDeleteJobModal');
                 domBtnAccept.dataset.jobgroupid = jobGroupId;
                 domBtnAccept.dataset.jobid = jobId;
+                domBtnAccept.dataset.action = 'deleteJob';
                 $('#deleteJobModal').modal();
             })
+        });
+
+        //Nút xóa nhóm công việc
+        const btnDeleteJobGroup = Array.from(document.getElementsByClassName('btnDeleteJobGroup'));
+        btnDeleteJobGroup.forEach(function (dom) {
+            dom.addEventListener('click', function () {
+                const jobGroupId = this.dataset.jobgroupid;
+                const jobId = '';
+                contentModal.innerHTML = `Xóa nhóm công việc "${this.previousElementSibling.value}"`;
+                const domBtnAccept = document.querySelector('#btnAcceptDeleteJobModal');
+                domBtnAccept.dataset.jobgroupid = jobGroupId;
+                domBtnAccept.dataset.jobid = jobId;
+                domBtnAccept.dataset.action = 'deleteJobGroup';
+                $('#deleteJobModal').modal();
+            });
         });
     })();
     //
@@ -104,6 +123,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.location = '/';
             }
         });
+    })();
+    //
+
+    //Update tên nhóm công việc
+    (() => {
+        const doms = Array.from(document.getElementsByClassName('iptJobGroupName'));
+
+        doms.forEach(function (dom) {
+            dom.addEventListener('keyup', async function () {
+                let jobGroupId = this.dataset.jobgroupid;
+                let result = await fetch(`/user/${jobGroupId}`, {
+                    method: 'put',
+                    headers: {
+                        'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: this.value.trim()
+                    })
+                });
+            })
+        })
     })();
     //
 
@@ -173,13 +213,25 @@ document.addEventListener('DOMContentLoaded', function () {
     })();
     //
 
-    //Xóa công việc /user/:jobGroupId/job/:jobId
+    //Xóa công việc & nhóm công việc
     (() => {
         const button = document.getElementById('btnAcceptDeleteJobModal');
+
         button.addEventListener('click', async function () {
+            let action = this.dataset.action;
             let jobGroupId = this.dataset.jobgroupid;
             let jobId = this.dataset.jobid;
-            let result = await fetch(`/user/${jobGroupId}/job/${jobId}`, {
+            let path = '';
+
+            if (action === 'deleteJob') {
+                path = `/user/${jobGroupId}/job/${jobId}`;
+            }
+
+            if (action === 'deleteJobGroup') {
+                path = `/user/${jobGroupId}`;
+            }
+
+            let result = await fetch(path, {
                 method: 'delete'
             })
             if (result.ok) {
