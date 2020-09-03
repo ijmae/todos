@@ -1,0 +1,73 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* .delete-text {
+    text-decoration: line-through;
+} */
+
+.subject {
+    border: 0;
+    font-size: 2rem;
+    width: 100%;
+}
+
+.subject:focus {
+    outline: none;
+}
+
+ul.list-group li:not(:last-child) {
+    border-bottom: 1px solid #a9a9a92b;
+}
+
+ul li input[type="checkbox"] {
+    width: 50px;
+    height: 20px;
+}
+
+li.bg-success .jobText {
+    color: white;
+}
+
+.btnEditJob, .btnDeleteJob {
+    margin: 1px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    align-content: center;
+}
+
+#editJobName {
+    width: 100%;
+    height: 120px;
+    border: 1px solid #a9a9a92b;
+    outline-color: #a9a9a92b;
+}
+
+@media (min-width: 576px) and (max-width: 999.98px) {
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+        column-gap: 5px
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1199.98px) {
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+        column-gap: 2px
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-columns {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+        column-gap: 2px
+    }
+}

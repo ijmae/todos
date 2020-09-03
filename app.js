@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express = require("express");
+const dotenv = require("dotenv");
+dotenv.config({ path: __dirname + '/.env' });
+const app = express();
+const port = process.env.PORT || 3000;
+const mainController = require('./controllers/ctrlMain');
+app.use('/assets', express.static(__dirname + '/public'));
+app.set('view engine', 'ejs');
+mainController(app);
+app.listen(port);
