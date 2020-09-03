@@ -8,7 +8,7 @@
     transition: 0.2s;
 }
 
-.card:hover, #iptNewJobGroup:hover, #btnNewJobGroup:hover,.iptNewJob:hover, .btnNewJob:hover,.btnEditJob:hover, .btnDeleteJob:hover, ul li:hover {
+.card:hover, #iptNewJobGroup:hover, #btnNewJobGroup:hover, .iptNewJob:hover, .btnNewJob:hover, .btnEditJob:hover, .btnDeleteJob:hover, ul li:hover {
     box-shadow: 0px 3px 8px 2px #0000007d;
     transition: 0.2s;
 }
@@ -52,8 +52,20 @@
     cursor: text;
 }
 
+ul.list-group {
+    border-radius: 5px;
+}
+
 ul.list-group li:not(:last-child) {
     border-bottom: 1px solid #a9a9a92b;
+}
+
+ul.list-group li:last-child {
+    border-radius: 0px 0px 5px 5px;
+}
+
+ul.list-group li:first-child {
+    border-radius: 5px 5px 0px 0px;
 }
 
 ul li .jobText {
