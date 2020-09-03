@@ -9,7 +9,7 @@ app.use('/assets', express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-    res.send('OK !');
+    res.send(process.env);
 })
 // mainController(app);
 app.listen(port);

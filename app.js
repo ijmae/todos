@@ -9,7 +9,7 @@ const mainController = require('./controllers/ctrlMain');
 app.use('/assets', express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
-    res.send('OK !');
+    res.send(process.env);
 });
 app.listen(port);
 console.log('Server is listening on ' + port);
