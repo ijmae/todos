@@ -3,6 +3,20 @@
     padding: 0px;
 }
 
+.card, #iptNewJobGroup, #btnNewJobGroup, ul, .iptNewJob, .btnNewJob, .btnEditJob, .btnDeleteJob {
+    box-shadow: 0px 3px 8px 0px #0000007d;
+    transition: 0.2s;
+}
+
+.card:hover, #iptNewJobGroup:hover, #btnNewJobGroup:hover,.iptNewJob:hover, .btnNewJob:hover,.btnEditJob:hover, .btnDeleteJob:hover, ul li:hover {
+    box-shadow: 0px 3px 8px 2px #0000007d;
+    transition: 0.2s;
+}
+
+.bg-success {
+    background-color: #4CAF50!important;
+}
+
 .groupJobGroupName {
     position: relative;
     height: 50px;
@@ -30,19 +44,26 @@
     font-size: 2rem;
     width: 100%;
     position: absolute;
+    cursor: pointer;
 }
 
 .subject:focus {
     outline: none;
+    cursor: text;
 }
 
 ul.list-group li:not(:last-child) {
     border-bottom: 1px solid #a9a9a92b;
 }
 
+ul li .jobText {
+    cursor: default;
+}
+
 ul li input[type="checkbox"] {
-    width: 50px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
 }
 
 li.bg-success .jobText {

@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     (() => {
         const domCheckBox = Array.from(document.getElementsByClassName('checkbox'));
         domCheckBox.forEach(dom => {
-            dom.addEventListener('change', async function () {
+            dom.addEventListener('click', async function () {
                 const parent = this.parentElement;
                 parent.classList.add('bg-light');
                 parent.classList.remove('bg-success');
