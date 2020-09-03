@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     })();
     //
-
+    
     //hiệu ứng hoàn tất
     (() => {
         const domCheckBox = Array.from(document.getElementsByClassName('checkbox'));

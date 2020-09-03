@@ -70,16 +70,22 @@ ul.list-group li:first-child {
 
 ul li .jobText {
     cursor: default;
+    word-wrap: break-word;
+    max-width: 50%;
 }
 
 ul li input[type="checkbox"] {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
 }
 
 li.bg-success .jobText {
     color: white;
+}
+
+.btnEditDeleteGroup {
+    text-align: center;
 }
 
 .btnEditJob, .btnDeleteJob {
