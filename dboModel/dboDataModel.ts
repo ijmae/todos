@@ -27,10 +27,10 @@ const MONGO_CLIENT = mongodb.MongoClient;
 const URL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}?retryWrites=true&w=majority`;
 
 const CONFIG = {
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
 };
 
-const DB_CLIENT = new MONGO_CLIENT(URL);
+const DB_CLIENT = new MONGO_CLIENT(URL, CONFIG);
 
 function handle(promise) {
     return promise

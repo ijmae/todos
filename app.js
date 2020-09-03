@@ -8,6 +8,8 @@ const port = process.env.PORT || 3000;
 const mainController = require('./controllers/ctrlMain');
 app.use('/assets', express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
-mainController(app);
+app.get('/', (req, res) => {
+    res.send('OK !');
+});
 app.listen(port);
 console.log('Server is listening on ' + port);
