@@ -1,18 +1,14 @@
 "use strict";
 const dataModel = require("../models/DataModel");
-const fs = require("fs");
 const mongodb = require("mongodb");
 const ObjectID = mongodb.ObjectID;
 const { DataModel, Job, JobGroup } = dataModel;
 const MONGO_CLIENT = mongodb.MongoClient;
-const URL = `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}:27017?ssl=true`;
+const URL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}?retryWrites=true&w=majority`;
 const CONFIG = {
     useUnifiedTopology: true,
-    sslValidate: true,
-    checkServerIdentity: false,
-    sslCA: [fs.readFileSync(__dirname + process.env.DB_CERTPATH)]
 };
-const DB_CLIENT = new MONGO_CLIENT(URL, CONFIG);
+const DB_CLIENT = new MONGO_CLIENT(URL);
 function handle(promise) {
     return promise
         .then(data => [data, undefined])
