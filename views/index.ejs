@@ -17,7 +17,7 @@
     <div class="card-columns m-3">
         <!-- jobgroup -->
         <% jobGroups.forEach(function(jobGroup) { %>
-        <% - include('./Partial/load_group.ejs', { jobGroupName: jobGroup.name, jobGroupId: jobGroup._id, jobs: jobGroup.jobs }) %>
+        <%- include('./Partial/load_group.ejs', { jobGroupName: jobGroup.name, jobGroupId: jobGroup._id, jobs: jobGroup.jobs }) %>
         <% }); %>
         <!-- jobgroup -->
     </div>
