@@ -1,6 +1,7 @@
 <div class="card border rounded bg-info">
     <div class="groupJobGroupName">
-        <input type="text" maxlength="20" class="subject bg-transparent mt-2 font-weight-bold text-white text-center iptJobGroupName"
+        <input type="text" maxlength="20"
+            class="subject bg-transparent mt-2 font-weight-bold text-white text-center iptJobGroupName"
             value="<%= jobGroupName %>" data-jobGroupId=<%= jobGroupId %>>
         <button class="btnDeleteJobGroup btn" data-jobGroupId=<%= jobGroupId %>>X</button>
     </div>
@@ -12,8 +13,8 @@
         <!-- jobs -->
     </ul>
     <div class="input-group mb-3 pl-3 pr-3">
-        <input type="text" class="form-control iptNewJob" placeholder="Nhập tên công việc"
-            aria-label="Nhập tên nhóm" aria-describedby="basic-addon2">
+        <input type="text" class="form-control iptNewJob" placeholder="Nhập tên công việc" aria-label="Nhập tên nhóm"
+            aria-describedby="basic-addon2">
         <button class="btn btn-success btnNewJob ml-1" type="button" data-jobGroupId=<%= jobGroupId %>>Tạo mới</button>
     </div>
 </div>

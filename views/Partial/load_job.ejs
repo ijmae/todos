@@ -1,8 +1,10 @@
 <li class="d-flex flex-row justify-content-between align-items-center align-self-stretch p-1 w-100">
-    <input type="checkbox" class="checkbox m-3" <% if(isDone) { %> checked <% } %> data-jobGroupId=<%= jobGroupId %> data-jobId=<%= jobId %>>
-    <div class="jobText p-2"> <%= jobName %></div>
+    <input type="checkbox" class="checkbox m-3" <% if(isDone) { %> checked <% } %> data-jobGroupId=<%= jobGroupId %>
+        data-jobId=<%= jobId %>>
+    <div class="jobText p-2"><%= jobName %></div>
     <div class="btnEditDeleteGroup m-2">
-        <button class="btnEditJob btn btn-info" data-jobGroupId=<%= jobGroupId %> data-jobId=<%= jobId %>><i class="fas fa-edit"></i></button>
+        <button class="btnEditJob btn btn-info" data-jobGroupId=<%= jobGroupId %> data-jobId=<%= jobId %>><i
+                class="fas fa-edit"></i></button>
         <button class="btnDeleteJob btn btn-danger" data-jobGroupId=<%= jobGroupId %> data-jobId=<%= jobId %>><i
                 class="fas fa-trash"></i></button>
     </div>
