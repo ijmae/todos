@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const _dboDataModel = require("../dboModel/dboDataModel");
-const _DataModel = require("../models/DataModel");
-const bodyParse = require("body-parser");
+const _dboDataModel = require('../dboModel/dboDataModel');
+const _DataModel = require('../models/DataModel');
+const bodyParse = require('body-parser');
 const urlencodedParse = bodyParse.urlencoded({ extended: false });
 const jsonParse = bodyParse.json();
 const dboDataModel = _dboDataModel();
