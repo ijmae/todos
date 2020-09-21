@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const ObjectID = require('mongodb').ObjectID;
 class Job {
     constructor(name, isDone = false) {

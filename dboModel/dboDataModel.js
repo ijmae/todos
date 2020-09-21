@@ -1,6 +1,8 @@
 "use strict";
-const dataModel = require("../models/DataModel");
-const mongodb = require("mongodb");
+Object.defineProperty(exports, "__esModule", { value: true });
+const dataModel = require('../models/DataModel');
+const fs = require('fs');
+const mongodb = require('mongodb');
 const ObjectID = mongodb.ObjectID;
 const { DataModel, Job, JobGroup } = dataModel;
 const MONGO_CLIENT = mongodb.MongoClient;

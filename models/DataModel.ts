@@ -1,3 +1,4 @@
+export {};
 const ObjectID = require('mongodb').ObjectID;
 
 class Job {
@@ -41,7 +42,7 @@ class DataModel {
     }
 }
 
-export = {
+module.exports = {
     DataModel: DataModel,
     JobGroup: JobGroup,
     Job: Job

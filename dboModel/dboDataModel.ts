@@ -17,9 +17,12 @@
 //             }
 //     ]
 // }
-import dataModel = require('../models/DataModel');
-import fs = require('fs');
-import mongodb = require('mongodb');
+
+export {};
+
+const dataModel = require('../models/DataModel');
+const fs = require('fs');
+const mongodb = require('mongodb');
 const ObjectID = mongodb.ObjectID;
 const { DataModel, Job, JobGroup } = dataModel;
 const MONGO_CLIENT = mongodb.MongoClient;
@@ -38,7 +41,7 @@ function handle(promise) {
         .catch(err => Promise.resolve([undefined, err]))
 }
 
-export = function modelData() {
+module.exports = function modelData() {
     const client = DB_CLIENT;
 
     return {

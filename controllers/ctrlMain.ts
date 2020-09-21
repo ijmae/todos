@@ -1,6 +1,7 @@
-import _dboDataModel = require('../dboModel/dboDataModel');
-import _DataModel = require('../models/DataModel');
-import bodyParse = require('body-parser');
+export {};
+const _dboDataModel = require('../dboModel/dboDataModel');
+const _DataModel = require('../models/DataModel');
+const bodyParse = require('body-parser');
 
 const urlencodedParse = bodyParse.urlencoded({ extended: false });
 const jsonParse = bodyParse.json();
